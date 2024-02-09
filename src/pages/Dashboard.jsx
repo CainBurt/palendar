@@ -1,6 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import GroupList from '../components/GroupList'
+import Calendar from '../components/Calendar'
 
 const supabase = createClient(
     'https://qkvibyrgicjwmvndbfyr.supabase.co',
@@ -45,6 +47,11 @@ export default function Dashboard() {
                     </>
                 }
             </header>
+            <div className="main-content">
+                <GroupList />
+                <Calendar />
+            </div>
+            
         </div>
     </>
     )

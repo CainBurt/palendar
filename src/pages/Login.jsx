@@ -9,7 +9,7 @@ const supabase = createClient(
 );
 
   
-export default function Home() {
+export default function Login() {
     const navigate = useNavigate()
 
     supabase.auth.onAuthStateChange(async (event) => {
@@ -20,16 +20,13 @@ export default function Home() {
 
     return (
     <>
-        <div>
-            <header>
-                <Auth 
+            <div className="auth-wrapper">
+                <Auth
                     supabaseClient={supabase}
                     appearance={{ theme: ThemeSupa }}
-                    theme='dark'
                     providers={['google', 'apple']}
                 />
-            </header>
-        </div>
-    </>
+            </div>
+        </>
     )
 }
